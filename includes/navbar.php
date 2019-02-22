@@ -6,8 +6,8 @@
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
             <a class="nav-item nav-link active" href="index.php">Home</a>
-            <a class="nav-item nav-link" href="#">Next</a>
-            <a class="nav-item nav-link" href="#">Next 2</a>
+            <a class="nav-item nav-link" href="#">About</a>
+            <a class="nav-item nav-link" href="#">About</a>
         </div>
     </div>
 </nav>
