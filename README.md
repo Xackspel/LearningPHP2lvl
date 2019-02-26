@@ -6,5 +6,6 @@ I will do learning everyday.
 Lessons:
 00. Done [21.02.2018];
 01. Done [22.02.2018];
-02. In process...
+02. Done [26.02.2018];
+03. In Progress...
 
