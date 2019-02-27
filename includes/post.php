@@ -1,15 +1,12 @@
 <?
   include './config.php';
-  $pdo = new PDO($MySQL_Path, $DataBaseLogin, $DataBasePass); // Connection to Data Base;
-  $statement = $pdo -> query("SELECT * FROM posts"); // Selection all posts;
-  $posts = $statement -> fetchall(PDO::FETCH_ASSOC); // Transforming posts to array;
-  
+  include './functions/functions.php';
+  $posts = GetAllPosts();
   // 'post_name'
   // 'post_description'
   // 'post_text'
   // 'author_id'
   // 'post_image'
-
   //var_dump($posts);
 ?>
 <?foreach($posts as $post):?>
@@ -27,6 +24,3 @@
     </div>
   </div>
 <?endforeach;?>
-
-
-
