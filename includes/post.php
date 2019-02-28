@@ -1,7 +1,13 @@
 <?
   include './config.php';
   include './functions/functions.php';
-  $posts = GetAllPosts();
+  include './classs/querybuilder.php';
+  $pdo = ConnectToDataBase(); // Get Connection to Data Base;
+  $db = new QueryBuilder($pdo);
+  $posts = $db->GetAll();
+  
+  //$posts = GetAllPosts($pdo); // Showing all posts.
+
   // 'post_name'
   // 'post_description'
   // 'post_text'
