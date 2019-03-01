@@ -9,5 +9,6 @@ Lessons:
 02. Done [26.02.2018];
 03. Done [28.02.2018];
 04. Done [28.02.2018];
+05. Learn OOP [01.03.2018];
 05. in Progress...
 
