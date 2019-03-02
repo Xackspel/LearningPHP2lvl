@@ -4,7 +4,7 @@
   include './classs/querybuilder.php';
   $pdo = ConnectToDataBase(); // Get Connection to Data Base;
   $db = new QueryBuilder($pdo);
-  $posts = $db->GetAll();
+  $posts = $db->GetAll('posts');
   
   //$posts = GetAllPosts($pdo); // Showing all posts.
 
