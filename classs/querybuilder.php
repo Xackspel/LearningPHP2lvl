@@ -7,10 +7,10 @@
         }
 
         /** Get all posts and put them as associated array **/
-        function GetAll(){
-            $statement = $this->pdo->query("SELECT * FROM posts"); // Selection all posts;
-            $posts = $statement -> fetchall(PDO::FETCH_ASSOC); // Transforming posts to array;
-            return $posts; // Return array of posts;
+        public function GetAll($table){
+            $statement = $this->pdo->query("SELECT * FROM {$table}"); // Selection all posts;
+            $result = $statement -> fetchall(PDO::FETCH_ASSOC); // Transforming posts to array;
+            return $result; // Return array of posts;
         }
     }
 ?>
