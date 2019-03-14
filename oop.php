@@ -18,6 +18,10 @@
             $this->engine->on();
         }
 
+        public function StopEngine(){
+            $this->engine->off();
+        }
+
         # Calculate range in km;
         public function range($distance_km){
 
@@ -57,7 +61,7 @@
     $Engine = new Engine;
 
     $Passat = new Car("black","VolksWagen", 2002, $Engine);
-    
+    $Passat->StartEngine();
 
     $Lanos = new Car("red","Daewoo", 2004);
     var_dump($Lanos);
