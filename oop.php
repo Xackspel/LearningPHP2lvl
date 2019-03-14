@@ -4,11 +4,18 @@
         private $carColor;
         private $carBrand;
         private $carProducet;
+        private $engine;
 
-        public function __construct($color, $brand, $producet){
+        public function __construct($color, $brand, $producet, $engine){
             $this->carColor=$color;
             $this->carBrand=$brand;
             $this->carProducet=$producet;
+            $this->engine=$engine;
+        }
+
+        # Start Engine;
+        public function StartEngine(){
+            $this->engine->on();
         }
 
         # Calculate range in km;
@@ -36,6 +43,21 @@
             #var_dump($tempVarr);
         }
     }
+
+    class Engine{
+        public function on(){
+
+        }
+
+        public function off(){
+            
+        }
+    }
+    
+    $Engine = new Engine;
+
+    $Passat = new Car("black","VolksWagen", 2002, $Engine);
+    
 
     $Lanos = new Car("red","Daewoo", 2004);
     var_dump($Lanos);
