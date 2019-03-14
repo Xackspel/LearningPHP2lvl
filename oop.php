@@ -33,16 +33,62 @@
                 return $this->carProducet;
             }
             #unset($tempVarr);
-            var_dump($tempVarr);
+            #var_dump($tempVarr);
         }
     }
 
     $Lanos = new Car("red","Daewoo", 2004);
+    var_dump($Lanos);
     $Lanos->changeColor("blue");
     echo "<br>".$Lanos->carDetails("Color");
     echo "<br>".$Lanos->carDetails("Brand");
     echo "<br>".$Lanos->carDetails("Producet");
-    
-    
 
+    class Animal{
+        public $name;
+        private $color;
+        protected $weight;
+
+        public function makeSound(){
+            
+        }
+
+        public function move(){
+
+        }
+    }
+
+    class Cat extends Animal{
+
+    }
+    
+    $myCat = new Cat;
+    $myCat->move();
+    
+    trait Greetings{
+        
+        public function sayHi(){
+            $this;
+            echo "Hi";
+        }
+        public function greetPerson(){
+            $personName = $this->personName;
+            echo "Wellcome".'&nbsp'.$personName;
+        }
+    }
+
+    class Person{
+        public $personName;
+        public $personAge;
+        use Greetings;
+
+        public function __construct($name, $age){
+            $this->personName=$name;
+            $this->personAge=$age;
+        }
+    }
+
+    $Oleksii = new Person("Oleksii", 34);
+    var_dump($Oleksii);
+    $Oleksii->greetPerson();
 ?>
