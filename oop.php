@@ -8,7 +8,7 @@
 
         # Construction of object with checking of type Engine;
         # If $ngine is't class of Eninge program will stop running;
-        public function __construct($color, $brand, $producet, anotherEngine $engine){
+        public function __construct($color, $brand, $producet, EngineInterFace $engine){
             $this->carColor=$color;
             $this->carBrand=$brand;
             $this->carProducet=$producet;
@@ -51,7 +51,12 @@
         }
     }
 
-    class Engine{
+    interface EngineInterFace{
+        public function on();
+        public function off();
+    }
+
+    class Engine implements EngineInterFace{
         public function on(){
 
         }
@@ -61,7 +66,7 @@
         }
     }
 
-    class anotherEngine{
+    class anotherEngine implements EngineInterFace{
         public function on(){
 
         }
@@ -71,39 +76,48 @@
         }
     }
     
-    $Engine = new Engine;
+    $engine = new Engine;
+    $anotherEngine = new anotherEngine;
 
-    $Passat = new Car("black","VolksWagen", 2002, $Engine);
+    $Passat = new Car("black","VolksWagen", 2002, $engine);
     $Passat->StartEngine();
-    
+    #var_dump($Passat);
 
-    $Lanos = new Car("red","Daewoo", 2004);
-    var_dump($Lanos);
+    $Lanos = new Car("red","Daewoo", 2004, $anotherEngine);
+    #var_dump($Lanos);
     $Lanos->changeColor("blue");
     echo "<br>".$Lanos->carDetails("Color");
     echo "<br>".$Lanos->carDetails("Brand");
-    echo "<br>".$Lanos->carDetails("Producet");
+    echo "<br>".$Lanos->carDetails("Producet")."<br>";
 
-    class Animal{
-        public $name;
-        private $color;
-        protected $weight;
 
-        public function makeSound(){
-            
+
+    abstract class Animal{
+        public $animalName;
+        public $animalColor;
+        public $animalWeight;
+        public $animalSound;
+
+        public  function __construct($name, $color, $weight, $sound){
+            $this->animalName=$name;
+            $this->animalColor=$color;
+            $this->animalWeight=$weight;
+            $this->animalSound=$sound;
         }
 
-        public function move(){
-
-        }
+        public abstract function makeSound();
     }
 
     class Cat extends Animal{
-
+        # some code;
+        public  function makeSound(){
+            echo $this->$animalSound."<br>";
+        }
     }
     
-    $myCat = new Cat;
-    $myCat->move();
+    $myCat = new Cat("murchik", "black", 8, "meow");
+    $myCat->makeSound();
+    #var_dump($myCat);
     
     trait Greetings{
         
@@ -113,7 +127,12 @@
         }
         public function greetPerson(){
             $personName = $this->personName;
-            echo "Wellcome".'&nbsp'.$personName;
+            echo "Wellcome".'&nbsp'.$personName."<br>";
+        }
+        
+        public function makeSound(){
+            $animalSound = $this->$animalSound;
+            echo $animalSound."<br>";
         }
     }
 
@@ -129,6 +148,7 @@
     }
 
     $Oleksii = new Person("Oleksii", 34);
-    var_dump($Oleksii);
+    #var_dump($Oleksii);
     $Oleksii->greetPerson();
+    $Oleksii->sayHi();
 ?>
