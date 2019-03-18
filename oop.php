@@ -4,23 +4,25 @@
         private $carColor;
         private $carBrand;
         private $carProducet;
-        private $engine;
+        private $carEngine;
 
-        public function __construct($color, $brand, $producet, $engine){
+        # Construction of object with checking of type Engine;
+        # If $ngine is't class of Eninge program will stop running;
+        public function __construct($color, $brand, $producet, anotherEngine $engine){
             $this->carColor=$color;
             $this->carBrand=$brand;
             $this->carProducet=$producet;
-            $this->engine=$engine;
+            $this->carEngine=$engine;
         }
 
         # Start Engine;
         public function StartEngine(){
-            $this->engine->on();
+            $this->carEngine->on();
         }
 
         # Stop Engine;
         public function StopEngine(){
-            $this->engine->off();
+            $this->carEngine->off();
         }
 
         # Calculate range in km;
@@ -58,11 +60,22 @@
             
         }
     }
+
+    class anotherEngine{
+        public function on(){
+
+        }
+
+        public function off(){
+            
+        }
+    }
     
     $Engine = new Engine;
 
     $Passat = new Car("black","VolksWagen", 2002, $Engine);
     $Passat->StartEngine();
+    
 
     $Lanos = new Car("red","Daewoo", 2004);
     var_dump($Lanos);
