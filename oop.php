@@ -111,7 +111,7 @@
     class Cat extends Animal{
         # some code;
         public  function makeSound(){
-            echo $this->$animalSound."<br>";
+            echo $this->animalSound."<br>";
         }
     }
     

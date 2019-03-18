@@ -16,7 +16,7 @@
   //var_dump($posts);
 ?>
 <?foreach($posts as $post):?>
-  <div class="col-md-2">
+ <div class="col-sm">
     <div class="card" style="width: 18rem;">
       <img src="<?=$DefaultImage;?>" class="card-img-top" alt="...">
       <div class="card-body">
