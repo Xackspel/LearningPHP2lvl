@@ -8,11 +8,11 @@
 
         # Construction of object with checking of type Engine;
         # If $ngine is't class of Eninge program will stop running;
-        public function __construct($color, $brand, $producet, EngineInterFace $engine){
+        public function __construct($color, $brand, $producet, EngineInterFace $newEngine){
             $this->carColor=$color;
             $this->carBrand=$brand;
             $this->carProducet=$producet;
-            $this->carEngine=$engine;
+            $this->carEngine=$newEngine;
         }
 
         # Start Engine;
@@ -58,21 +58,21 @@
 
     class Engine implements EngineInterFace{
         public function on(){
-
+            echo "Start Gas Engine";
         }
 
         public function off(){
-            
+            echo "Stop Gas Engine";
         }
     }
 
     class anotherEngine implements EngineInterFace{
         public function on(){
-
+            echo "Start Diesel Engine";
         }
 
         public function off(){
-            
+            echo "Stop Diesel Engine";
         }
     }
     
@@ -81,9 +81,12 @@
 
     $Passat = new Car("black","VolksWagen", 2002, $engine);
     $Passat->StartEngine();
+    $Passat->StopEngine();
     #var_dump($Passat);
 
     $Lanos = new Car("red","Daewoo", 2004, $anotherEngine);
+    $Lanos->StartEngine();
+    $Lanos->StopEngine();
     #var_dump($Lanos);
     $Lanos->changeColor("blue");
     echo "<br>".$Lanos->carDetails("Color");
@@ -105,7 +108,7 @@
             $this->animalSound=$sound;
         }
 
-        public abstract function makeSound();
+        #public abstract function makeSound();
     }
 
     class Cat extends Animal{
@@ -117,6 +120,7 @@
     
     $myCat = new Cat("murchik", "black", 8, "meow");
     $myCat->makeSound();
+
     #var_dump($myCat);
     
     trait Greetings{
