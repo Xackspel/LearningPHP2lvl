@@ -1,5 +1,7 @@
 <?
+    # Here I have realized my knowledge of OOP.
     # Car class;
+
     class Car{
         private $carBrand;
         private $carModel;
@@ -52,7 +54,7 @@
 
     # Create Engine
     # Class Engine implements interface of class EngineInterface
-    class Engine{
+    abstract class Engine{
         public $engineValue;
         public $enginePower;
 
