@@ -96,6 +96,7 @@
 
     # New object of car class;
     $myCar = new Car("Daewoo", "Lanos", "Sedan", "Red", 2004, $A16DMS);
+    
     $myCar->ShowCarDetails();
     $myCar->UpdateCarBrand("Chevrolet");
     $myCar->ShowCarDetails();
