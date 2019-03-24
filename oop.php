@@ -7,7 +7,7 @@
         private $carColor;
         private $carYear;
 
-        public function __construct($brand, $model, $type, $color, $year, Engine $engine){
+        public function __construct($brand, $model, $type, $color, $year, EngineInterface $engine){
             $this->updateCarBrand($brand);
             $this->carType=$type;
             $this->carColor=$color;
@@ -22,7 +22,8 @@
             echo "Color:"."&nbsp".$this->carColor."<br>";
             echo "Year:"."&nbsp".$this->carYear."<br>";
             echo "Engine value:"."&nbsp".$this->carEngine->engineValue."<br>";            
-            echo "Engine power:"."&nbsp".$this->carEngine->enginePower."<br>"; 
+            echo "Engine power:"."&nbsp".$this->carEngine->enginePower."<br>";
+            echo "Engine type:"."&nbsp".$this->carEngine->typeEngine."<br>";
         }
 
         public function UpdateCarBrand($brand){
@@ -43,7 +44,14 @@
         }
     }
 
+    # Create Engine Interface for different engines
+    interface EngineInterface{
+        public function On();
+        public function Off();
+    }
+
     # Create Engine
+    # Class Engine implements interface of class EngineInterface
     class Engine{
         public $engineValue;
         public $enginePower;
@@ -52,22 +60,37 @@
             $this->engineValue=$value;
             $this->enginePower=$power;
         }
-
-        public function On(){
-            echo "The engine have been started<br>";
-        }
-        public function Off(){
-            echo "The engine have been stoped<br>";
-        }
-
         public function ShowEngineDetails(){
             $value = $this->engineValue;
             $power = $this->enginePower;
-            echo "Engine Valuse is: $value<br>Engine Power is: $power";
+            echo "Engine Type is: $typeofengine<br>Engine Valuse is: $value<br>Engine Power is: $power";
         }
     }
 
-    $A16DMS = new Engine(1.6, 106);
+    class GasEngine extends Engine implements EngineInterface{
+        public $typeEngine = "Gas";
+
+        public function On(){
+            echo "The Gsas engine have been started<br>";
+        }
+        public function Off(){
+            echo "The Gas engine have been stoped<br>";
+        }
+    }
+
+    class DieselEngine extends Engine implements EngineInterface{
+        public $typeEngine = "Diesel";
+
+        public function On(){
+            echo "The Diesel engine have been started<br>";
+        }
+        public function Off(){
+            echo "The Diesel engine have been stoped<br>";
+        }
+    }
+
+
+    $A16DMS = new DieselEngine(1.6, 106);
 
     # New object of car class;
     $myCar = new Car("Daewoo", "Lanos", "Sedan", "Red", 2004, $A16DMS);
