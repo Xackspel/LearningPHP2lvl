@@ -1,5 +1,5 @@
 <?
-    $Title = "PHP Blog"; // Setup website title;
+    $Title = "Advanced PHP Blog"; // Setup website title;
     $Logo ="Advanced Blog"; // Setup website logo;
     $PathIamage = "images/"; // Setup images folder path;
 
