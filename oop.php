@@ -57,14 +57,17 @@
     abstract class Engine{
         public $engineValue;
         public $enginePower;
+        public $typeEngine;
 
-        public function __construct($value, $power){
+        public function __construct($value, $power, $typeEngine){
             $this->engineValue=$value;
             $this->enginePower=$power;
+            $this->typeEngine=$typeEngine;
         }
         public function ShowEngineDetails(){
             $value = $this->engineValue;
             $power = $this->enginePower;
+            $typeofengine = $this->typeEngine;
             echo "Engine Type is: $typeofengine<br>Engine Valuse is: $value<br>Engine Power is: $power";
         }
     }

@@ -14,7 +14,7 @@
             </div>
             <div class="form-group">
                 <label for="exampleInputPassword1">Post Text</label>
-                <textarea name="Post_Text" class="form-control" id="exampleFormControlTextarea1" rows="20"></textarea>
+                <textarea name="Post_Text" class="form-control" id="exampleFormControlTextarea1" rows="10"></textarea>
             </div>
             </div>
                 <button type="submit" class="btn btn-primary">Create new post</button>
