@@ -2,8 +2,10 @@
     include './config.php';
     include './functions/functions.php';
     include './classs/querybuilder.php';
+    include './classs/database.php';
     $pdo = ConnectToDataBase(); // Get Connection to Data Base;
-    $db = new QueryBuilder($pdo);
-    //$db->addPost($table, $post_name, $post_description, $post_text, $author_id, $post_image);
-    var_dump($_POST);
+  
+    $dataBase = new QueryBuilder($pdo);
+    $dataBase->addPost('posts', $_POST['post_name'], $_POST['post_description'], $_POST['post_text'], $_POST['author_id'], $POST['post_image']);
+    var_dump($_POST, $dataBase);
 ?>
