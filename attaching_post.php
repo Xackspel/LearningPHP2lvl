@@ -6,6 +6,6 @@
     $pdo = ConnectToDataBase(); // Get Connection to Data Base;
   
     $dataBase = new QueryBuilder($pdo);
-    $dataBase->addPost('posts', $_POST['post_name'], $_POST['post_description'], $_POST['post_text'], $_POST['author_id'], $POST['post_image']);
+    $dataBase->addPost('posts', $_POST['post_name'], $_POST['post_description'], $_POST['post_text'], $_POST['author_id'], $_POST['post_image']);
     var_dump($_POST, $dataBase);
 ?>
