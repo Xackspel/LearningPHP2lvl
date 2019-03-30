@@ -6,7 +6,7 @@
         protected $db_table;
         protected $pdo;
 
-        protected function __construct($host, $login, $password){
+        protected function __construct($host, $login, $password, $table){
             include 'config.php'; // Connection to config file;
             $this->db_host=$host;
             $this->db_login=$login;
@@ -14,9 +14,9 @@
             $this->db_tables=$table;
         }
 
-        protected function ConectionToDB(){
+        protected function ConnectionToDB(){
             $db_host=$this->db_host;
-            $db_login=$$this->db_login;
+            $db_login=$this->db_login;
             $db_password=$this->db_password;
             $pdo = new PDO($db_host, $db_login, $db_password); // Connection to Data Base;
             return $pdo;
