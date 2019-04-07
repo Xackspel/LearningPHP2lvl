@@ -9,7 +9,7 @@
             </div>
             <div class="form-group">
                 <label for="exampleInputEmail1">Post Name</label>
-                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter post name" name="post_tname" required>
+                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter post name" name="post_name" required>
             </div>
             <div class="form-group">
                 <label for="exampleInputPassword1">Post Description</label>

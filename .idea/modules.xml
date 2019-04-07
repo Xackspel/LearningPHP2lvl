@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../BlogPHP/.idea/BlogPHP.iml" filepath="$PROJECT_DIR$/../BlogPHP/.idea/BlogPHP.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/LearningPHP2lvl.iml" filepath="$PROJECT_DIR$/.idea/LearningPHP2lvl.iml" />
     </modules>
   </component>

@@ -16,7 +16,7 @@
 
         public function ConectionToDB(){
             $db_host=$this->db_host;
-            $db_login=$$this->db_login;
+            $db_login=$this->db_login;
             $db_password=$this->db_password;
             $pdo = new PDO($db_host, $db_login, $db_password); // Connection to Data Base;
             return $pdo;

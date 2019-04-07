@@ -14,9 +14,12 @@
         }
 
         /** Add new post to database **/
-        function addPost($table, $post_name, $post_description, $post_text, $author_id, $post_image){
-            $statement = $this->pdo->query("INSERT INTO {$table} (post_id, post_name, post_description, post_text, author_id, post_image) VALUES (NULL, '$post_name', '$post_description', '$post_text', '$author_id', '$post_image')"); // Selection all posts;
+        public function addPost($table, $array){
+            $post_name = $array['post_name'];
+            $post_description = $array['post_description'];
+            $post_text = $array['post_text'];
+            var_dump($table, $post_name, $post_description, $post_text);
+            $send_data = $this->pdo->query("INSERT INTO {$table} (post_id, post_name, post_description, post_text, author_id, post_image) VALUES (NULL, '$post_name', '$post_description', '$post_text', NULL, NULL)");
             //header('Location:index.php'); // Once all details been sent, move user to main page;
         }
     }
-?>

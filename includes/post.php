@@ -1,11 +1,9 @@
 <?
-  include './config.php';
-  include './functions/functions.php';
-  include './classs/querybuilder.php';
-  include './classs/database.php';
+  include './class/querybuilder.php';
+  include './class/database.php';
+  include './class/connection.php';
 
-  $pdo = ConnectToDataBase(); // Get Connection to Data Base;
-  $dataBase = new QueryBuilder($pdo);
+  $dataBase = new QueryBuilder(Connection::Make());
   $posts = $dataBase->GetAll('posts');
 ?>
 <?foreach($posts as $post):?>
