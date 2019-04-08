@@ -3,7 +3,7 @@
   include './class/database.php';
   include './class/connection.php';
 
-  $dataBase = new QueryBuilder(Connection::Make());
+  $dataBase = new QueryBuilder(Connection::Make($MySQL_Path, $DataBaseLogin, $DataBasePass));
   $posts = $dataBase->GetAll('posts');
 ?>
 <?foreach($posts as $post):?>
